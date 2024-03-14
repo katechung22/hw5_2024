@@ -1,0 +1,145 @@
+@keyframes logo {
+    0% {width: 25px; opacity: 0;}
+    100% {width: 475px; opacity: 1;}
+}
+
+#logo {
+    width: 475px;
+    animation: logo 5s;
+}
+
+body {
+    font-family: "Poppins", Serif;
+    background-image: url(../images/concrete_seamless.png);
+    background-color: #f1f1f1;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+}
+
+a:link {
+    color: #0000FF;
+}
+
+a:visited {
+    color: #0000FF;
+}
+
+.card > header {
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/* step 7 and 8 */
+.card {
+    flex-basis: 450px;
+    flex-direction: column;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery img {
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .pricing {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    .card {
+        flex-direction: column;
+        flex-basis: 275px;
+    }
+
+    body > header {
+        position: sticky;
+        top: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        width: 475px;
+        animation: none;
+    }
+}
+
+@media print {
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .pricing {
+        flex-flow: row nowrap;
+        align-items: flex-end;
+    }
+
+    .card {
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+    
+    h2:last-of-type {
+        display: none;
+    }
+    
+    .gallery {
+        display: none;
+    }
+
+    /* add emoji at end of second item in list */
+    .card ul:nth-child(2) {
+        content: "👍";
+    }
+}
