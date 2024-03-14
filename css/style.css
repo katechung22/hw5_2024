@@ -20,7 +20,7 @@ header {
     align-items: center;
 }
 
-.nav-links {
+.nav_links {
     display: flex;
     flex-direction: column;
 }
