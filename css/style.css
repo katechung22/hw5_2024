@@ -1,25 +1,30 @@
+/* animating the logo to start at 25px and 0 opacity to 475pc and 1 opacity */
 @keyframes logo {
     0% {width: 25px; opacity: 0;}
     100% {width: 475px; opacity: 1;}
 }
 
+/* calling the logo and setting duration */
 #logo {
     width: 475px;
     animation: logo 5s;
 }
 
+/* adding font family, background image, and background color */
 body {
     font-family: "Poppins", Serif;
     background-image: url(../images/concrete_seamless.png);
     background-color: #f1f1f1;
 }
 
+/* making default nav bar in centered */
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* making the nav links vertical */
 .nav_links {
     display: flex;
     flex-direction: column;
@@ -29,6 +34,7 @@ a:link {
     color: #0000FF;
 }
 
+/* making the visited color the same color as the original link color so that the visited links don't change color */
 a:visited {
     color: #0000FF;
 }
@@ -42,7 +48,7 @@ a:visited {
     border-top-right-radius: 50px;
 }
 
-/* step 7 and 8 */
+/* setting default size for cards using basis */
 .card {
     flex-basis: 450px;
     flex-direction: column;
@@ -50,6 +56,7 @@ a:visited {
     border-top-right-radius: 50px;
 }
 
+/* making sure cards are centered */
 .pricing {
     display: flex;
     flex-wrap: wrap;
@@ -57,40 +64,48 @@ a:visited {
     justify-content: center;
 }
 
+/* adding borders to images */
 .gallery img {
     border: solid 10px #50C7C7;
     margin: 10px;
     width: 300px;
 }
 
+/* making gallery wrap and pictures centered */
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+/* setting breakpoint at 900px */
 @media screen and (min-width: 900px) {
+    /* changing top bar so logo and nav links are at opposite ends */
     header {
         flex-direction: row;
         justify-content: space-between;
     }
 
+    /* making nav links horizontal */
     .nav_links {
         display: flex;
         flex-direction: row;
     }
 
+    /* making cards horizontal */
     .pricing {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
     }
 
+    /* setting card sizes so the widths are the same */
     .card {
         flex-direction: column;
         flex-basis: 275px;
     }
 
+    /* making nav bar apparent even when the page is scolling using sticky */
     body > header {
         position: sticky;
         top: 0;
@@ -98,6 +113,7 @@ a:visited {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    /* getting rid of animation when user prefers reduced motion */
     #logo {
         width: 475px;
         animation: none;
@@ -105,6 +121,7 @@ a:visited {
 }
 
 @media print {
+    /* changing font family in print view */
     body {
         font-family: Arial, Helvetica;
         background-image: none;
@@ -114,12 +131,14 @@ a:visited {
         width: 100%;
     }
 
+    /* changing nav links to be centered and horizontal in print view */
     .nav_links {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
 
+    /* setting cards horizontally and lined up at the bottom */
     .pricing {
         flex-flow: row nowrap;
         align-items: flex-end;
@@ -130,14 +149,17 @@ a:visited {
         flex-basis: 325px;
     }
     
+    /* getting rid of gallery header in print view */
     h2:last-of-type {
         display: none;
     }
     
+    /* getting rid of gallery in print view */
     .gallery {
         display: none;
     }
 
+    /* selecting second list item in cards and putting thumbs-up emoji */
     .card ul *:nth-child(2n)::after {
         content: "👍";
     }
